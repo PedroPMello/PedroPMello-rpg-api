@@ -1,6 +1,6 @@
 # API - Gerenciamento de Ficha D&D 5e
 
-API RESTful para gerenciamento de fichas de personagens de **Dungeons & Dragons 5ª Edição**, desenvolvida como Trabalho I da disciplina de Serviços Web — IFSul Campus Passo Fundo.
+API RESTful para gerenciamento de fichas de personagens de **Dungeons & Dragons 5ª Edição**, desenvolvida como Trabalho da disciplina de Serviços WEB — IFSul Campus Passo Fundo.
 
 ---
 
@@ -287,6 +287,6 @@ A especificação OpenAPI permite que a documentação seja o contrato da API �
 ## Autor
 
 Aluno: Pedro Pizzolato Mello
-Desenvolvido para a disciplina Serviços Web (PF_CC.44)  
+Desenvolvido para a disciplina Serviços WEB  
 IFSul — Campus Passo Fundo  
 Professor: Élder F. F. Bernardi
