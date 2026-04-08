@@ -1,0 +1,59 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         Int         @id @default(autoincrement())
+  name       String
+  email      String      @unique
+  password   String
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+  characters Character[]
+}
+
+model Character {
+  id           Int      @id @default(autoincrement())
+  userId       Int
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Identidade
+  name         String
+  race         String
+  class        String
+  subclass     String?
+  background   String?
+  alignment    String?
+  level        Int      @default(1)
+  experiencePoints Int  @default(0)
+
+  // Atributos base
+  strength     Int      @default(10)
+  dexterity    Int      @default(10)
+  constitution Int      @default(10)
+  intelligence Int      @default(10)
+  wisdom       Int      @default(10)
+  charisma     Int      @default(10)
+
+  // Combate
+  maxHitPoints     Int  @default(8)
+  currentHitPoints Int  @default(8)
+  temporaryHitPoints Int @default(0)
+  armorClass       Int  @default(10)
+  speed            Int  @default(30)
+  initiative       Int  @default(0)
+
+  // Outros
+  proficiencyBonus Int  @default(2)
+  inspiration      Boolean @default(false)
+  backstory        String?
+  notes            String?
+
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
